@@ -1,0 +1,73 @@
+------------------------------------------------------------
+          Invoking FHI-aims ...
+
+  aims-fd: forces and stress by central finite differences of the electronic free
+  energy of $n_runs FHI-aims runs (delta = $delta A, strain step = $strain_step).
+
+  aims-fd version       : $aims_fd_version
+  pyfhiaims version     : $pyfhiaims_version
+  FHI-aims version      : $aims_version
+  Commit number         : $commit_hash
+
+  Parsing control.in (first pass over file, find array dimensions only).
+  The contents of control.in will be repeated verbatim below
+  unless switched off by setting 'verbatim_writeout .false.' .
+  in the first line of control.in .
+  -----------------------------------------------------------------------
+$control_in
+  -----------------------------------------------------------------------
+  Completed first pass over input file control.in .
+  -----------------------------------------------------------------------
+
+  Parsing geometry.in (first pass over file, find array dimensions only).
+  The contents of geometry.in will be repeated verbatim below
+  unless switched off by setting 'verbatim_writeout .false.' .
+  in the first line of geometry.in .
+  -----------------------------------------------------------------------
+$geometry_in
+  -----------------------------------------------------------------------
+  Completed first pass over input file geometry.in .
+  -----------------------------------------------------------------------
+
+  Basic array size parameters:
+  | Number of atoms                   : $n_atoms
+$spin_channels
+          Reading file control.in.
+$occupation_type
+          Reading geometry description geometry.in.
+  Input geometry:
+$input_geometry
+
+$electrons
+  Consistency checks for the contents of control.in are next.
+$kohn_sham_states
+          Preparing all fixed parts of the calculation.
+$k_points------------------------------------------------------------
+          Begin self-consistency loop: Initialization.
+------------------------------------------------------------
+          Begin self-consistency iteration #    1
+
+  Self-consistency cycle converged.
+
+  Energy of the reference run (undistorted geometry):
+  | Total energy uncorrected      :   $total_energy eV
+  | Total energy corrected        :   $corrected_total_energy eV
+  | Electronic free energy        :   $free_energy eV
+
+$results------------------------------------------------------------
+  Final output of selected total energy values:
+
+------------------------------------------------------------
+          Leaving FHI-aims.
+
+          Detailed time accounting                     :  max(cpu_time)    wall_clock(cpu1)
+          | Total time                                  : $cpu_time s  $wall_time s
+
+          Partial memory accounting:
+          | Peak values for overall tracked memory usage:
+          |   Minimum: $memory_min MB
+          |   Maximum: $memory_max MB
+          |   Average: $memory_avg MB
+
+          Have a nice day.
+------------------------------------------------------------
